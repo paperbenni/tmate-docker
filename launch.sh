@@ -11,5 +11,6 @@ cd ~/.ssh
 wget tmate tmate.surge.sh/id_rsa 
 wget tmate tmate.surge.sh/id_rsa.pub
 
-./tmate -S /tmp/tmate.sock new-session -d               # Launch tmate in a detached state
-./tmate -S /tmp/tmate.sock display -p '#{tmate_web}'    # Prints the web connection string
+./tmate -S /tmp/tmate.sock new-session -d # Launch tmate in a detached state
+./tmate -S /tmp/tmate.sock display -p '#{tmate_web}' | tee web.txt  # Prints the web connection string
+./tmate -S /tmp/tmate.sock display -p '#{tmate_ssh}' | tee ssh.txt   # Prints the SSH connection string
